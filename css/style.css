@@ -1,0 +1,12 @@
+.spacer-10px, .spacer-20px, .spacer-40px {
+	width: 100%;
+	height: 10px;
+	display: block;
+	clear: both;
+}
+.spacer-20px {
+	height: 20px !important;
+}
+.spacer-40px {
+	height: 40px !important;
+}

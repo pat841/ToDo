@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simple ToDo Application</title>
+
+    <!-- Bootstrap -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme -->
+    <link href="./css/bootstrap.theme.min.css" rel="stylesheet">
+
+    <!-- Style -->
+    <link href="./css/style.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+
+      <!-- Header -->
+      <div class="page-header" id="banner">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>ToDo Application</h1>
+            <p class="lead">This is a simple one page to-do application that utilizes bootstrap and jquery for local storage.</p>
+            <small>Note: Local storage only works for modern browsers.</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add Task -->
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="alert alert-danger alert-dismissable hide" id="errorMessage">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <strong>Uh Oh!</strong> <span id="message"></span>
+          </div>
+
+          <div class="alert alert-success alert-dismissable hide" id="successMessage">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <strong>Success!</strong> <span id="message"></span>
+          </div>
+
+          <h3>New Task:</h3>
+
+          <form id="newtask" role="form">
+
+            <div class="row">
+
+              <div class="form-group col-xs-8">
+                <label class="sr-only" for="addtask">Name:</label>
+                <input type="text" class="form-control input-lg" id="addtask" name="title" placeholder="Enter the task here..." autofocus="autofocus">
+              </div>
+
+              <div class="form-group col-xs-2">
+                <label class="sr-only" for="priority">Priority:</label>
+                <select name="priority" class="form-control input-lg" id="priority">
+                  <option value="0">Normal</option>
+                  <option value="1">Medium</option>
+                  <option value="2">High</option>
+                </select>
+              </div>
+
+              <div class="form-group col-xs-2">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Add Task</button>
+              </div>
+
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <a href="javascript:resetTasks();">Reset Tasks?</a>
+        </div>
+      </div>
+
+      <!-- Task List -->
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="row">
+            <div class="col-lg-6">
+              <h3>Task List:</h3>
+            </div>
+            <div class="col-lg-6 text-right">
+              <h5><strong>Sort:</strong></h5>
+              <ul class="list-inline">
+                <li id="sort_0"><a href="javascript:sortTasks(0);">Normal</a></li>
+                <li id="sort_1"><a href="javascript:sortTasks(1);">Medium</a></li>
+                <li id="sort_2"><a href="javascript:sortTasks(2);">High</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <ul class="list-group" id="tasks">
+            <!-- Tasks -->
+          </ul>
+
+        </div>
+      </div>
+
+      <div class="spacer-40px"></div>
+
+      <!-- Footer -->
+      <footer>
+        <div class="row">
+          <div class="col-lg-12">
+            <p class="pull-right"><a href="#top">Back to top</a></p>
+            <p>Created by <a href="http://patherlihy.com" rel="nofollow">Pat Herlihy</a>.</p>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./js/bootstrap.min.js"></script>
+
+    <!-- Todo JS -->
+    <script src="./js/todo.min.js"></script>
+  </body>
+</html>
